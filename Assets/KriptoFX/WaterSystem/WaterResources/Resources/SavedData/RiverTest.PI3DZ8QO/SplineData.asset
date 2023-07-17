@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec75ce71e21e40849beed5184a1b355f, type: 3}
+  m_Name: SplineData
+  m_EditorClassIdentifier: 
+  Splines:
+  - ID: 0
+    SplinePoints:
+    - ID: 0
+      WorldPosition: {x: 33.42969, y: 16.515982, z: 39.91319}
+      Width: 10
+    - ID: 1
+      WorldPosition: {x: 27.17052, y: 15.458891, z: 28.420837}
+      Width: 13.596209
+    - ID: 2
+      WorldPosition: {x: 21.60822, y: 14.028618, z: 12.512796}
+      Width: 19.399109
+    - ID: 3
+      WorldPosition: {x: 22.38015, y: 10.714185, z: -5.9694557}
+      Width: 15.899824
+    - ID: 4
+      WorldPosition: {x: 25.772491, y: 9.069706, z: -23.459448}
+      Width: 14.642899
+    - ID: 5
+      WorldPosition: {x: 29.657766, y: 8.0354595, z: -46.927513}
+      Width: 10
+    - ID: 6
+      WorldPosition: {x: 28.700382, y: 6.4819646, z: -64.32274}
+      Width: 39.33378
+    - ID: 7
+      WorldPosition: {x: 22.961704, y: 3.559582, z: -93.49424}
+      Width: 54.450893
+    - ID: 8
+      WorldPosition: {x: 16.63851, y: 1.7747933, z: -112.95619}
+      Width: 23.610577
+    - ID: 9
+      WorldPosition: {x: 21.59929, y: 1.079477, z: -143.99501}
+      Width: 74.53636
+    - ID: 10
+      WorldPosition: {x: 36.065155, y: 0.33344936, z: -159.95459}
+      Width: 30.578125
+    - ID: 11
+      WorldPosition: {x: 51.330715, y: 0.7313175, z: -173.11041}
+      Width: 34.984726
+    - ID: 12
+      WorldPosition: {x: 77.10215, y: 1.5262166, z: -175.7596}
+      Width: 34.984726
+    - ID: 13
+      WorldPosition: {x: 102.03334, y: 1.8596965, z: -170.80737}
+      Width: 34.984726
+    - ID: 14
+      WorldPosition: {x: 135.01242, y: 1.241662, z: -166.08879}
+      Width: 34.984726
+    VertexCountBetweenPoints: 20
+    Depth: 10

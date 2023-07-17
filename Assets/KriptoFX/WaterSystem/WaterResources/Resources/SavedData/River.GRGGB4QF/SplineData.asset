@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec75ce71e21e40849beed5184a1b355f, type: 3}
+  m_Name: SplineData
+  m_EditorClassIdentifier: 
+  Splines:
+  - ID: 0
+    SplinePoints:
+    - ID: 0
+      WorldPosition: {x: 30.76969, y: 1, z: -161.17937}
+      Width: 59.13483
+    - ID: 1
+      WorldPosition: {x: 33.212524, y: 1, z: -146.21954}
+      Width: 50.997654
+    - ID: 2
+      WorldPosition: {x: 32.292095, y: 1.99019, z: -122.107056}
+      Width: 41.34945
+    - ID: 3
+      WorldPosition: {x: 29.37853, y: 1.6320064, z: -96.51954}
+      Width: 41.34945
+    - ID: 4
+      WorldPosition: {x: 22.80867, y: 1.8513731, z: -64.761696}
+      Width: 41.34945
+    - ID: 5
+      WorldPosition: {x: 19.439999, y: 1.5528171, z: -29.949188}
+      Width: 41.34945
+    - ID: 6
+      WorldPosition: {x: 24.516018, y: 3.3241918, z: -7.223729}
+      Width: 41.34945
+    VertexCountBetweenPoints: 20
+    Depth: 10

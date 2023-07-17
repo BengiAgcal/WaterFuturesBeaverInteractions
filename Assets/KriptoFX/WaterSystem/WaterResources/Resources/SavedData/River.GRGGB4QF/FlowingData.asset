@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 208a3c14a53357c49b24e31e635262dd, type: 3}
+  m_Name: FlowingData
+  m_EditorClassIdentifier: 
+  AreaSize: 400
+  AreaPosition: {x: 0, y: 4.1, z: 0}
+  FlowmapResolution: 4096
+  FlowmapTexture: {fileID: -8420323808064330751, guid: f0acaf544561c1e4c91c30cbdab62af3, type: 3}
+  FluidsMaskTexture: {fileID: 3814094129214336937, guid: 537f7b1cdbde2d345b9b3e99e9fc24fc, type: 3}
+  FluidsPrebakedTexture: {fileID: 1960885576098763780, guid: 675649856cc82eb4784afe9818984e42, type: 3}
