@@ -29,29 +29,29 @@ public class PlayerPickDrop : MonoBehaviour
 
 
     public List<GameObject> Branches = new List<GameObject>();
-    // Start is called before the first frame update
+    // This Script is kinda the game manager, managews the beaver picking, dropping and eating as well as the UI for interactions and Error Display
     void Start()
     {
         _errorDisplay = GameObject.Find("Error");
     }
 
     // Update is called once per frame
-    private void Update()
+    private void Update() // check if Y is pressed to drop obkects, pick up is handled by YTinteractor
     {
        
-        if (Branches.Count > 0 && Input.GetKeyUp(KeyCode.Y) && !_inDropArea) // Perform Regular Drop if beaver not in the Drop Area
+        if (Branches.Count > 0 && Input.GetKeyUp(KeyCode.Y) && !_inDropArea) // Perform Regular Drop if beaver not in the Drop Area, just disables physics
         {
             Drop();
         }
 
         if (Branches.Count > 0 && Input.GetKeyUp(KeyCode.Y) && _inDropArea && _dropArea!= null) // Perform Special Drop if in the Drop Area
         {
-            for (int i = 0; i < Branches.Count; i++)
+            for (int i = 0; i < Branches.Count; i++) // for each branch in the list
             {
                 //Branches[i].tag = "Untagged";
-                Branches[i].GetComponent<Stick>().enabled = false;
+                Branches[i].GetComponent<Stick>().enabled = false; // can no longer pick up the item
 
-                _dropArea.GetComponent<DropField>().CollectedBranches.Add(Branches[i]);
+                _dropArea.GetComponent<DropField>().CollectedBranches.Add(Branches[i]); // move branches to collected branches (Can do Fade Anmiations etc)
             }
             _dropArea.GetComponent<DropField>().addItem(Branches.Count);
             Drop();
@@ -60,7 +60,7 @@ public class PlayerPickDrop : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other) // check if in  drop area or need to show UI
     {
         if(other.tag=="DropArea")
         {
@@ -128,9 +128,8 @@ public class PlayerPickDrop : MonoBehaviour
         {
             if (Branches.Count == 0) // not holding any object can eat
             {
-                //m_MyEvent2.Invoke(); // make the move
+                
                 StartCoroutine(DelayedFunction(other, 0.5f)); // tbd
-                //Invoke("m_MyEvent", 1);
                 m_MyEvent.Invoke();
                 DestroyFood(other);
             }
@@ -142,7 +141,7 @@ public class PlayerPickDrop : MonoBehaviour
         }
     }
 
-    IEnumerator DelayedFunction(Collider other, float delay)
+    IEnumerator DelayedFunction(Collider other, float delay) // Coroutine implemented to be able to delay the pick action
     {
         yield return new WaitForSeconds(delay);
 
@@ -150,7 +149,7 @@ public class PlayerPickDrop : MonoBehaviour
         PickUp(other);
     }
 
-    public void PickUp(Collider other)
+    public void PickUp(Collider other)  // picks up Item by makiing it a child of the pivot
     {
         Vector3 nextpos = -pivot.transform.localPosition;
 
@@ -168,7 +167,7 @@ public class PlayerPickDrop : MonoBehaviour
     }
 
     
-    public void Drop()
+    public void Drop()  // Drops items in the List
     {
         for (int i = 0; i < Branches.Count; i++)
         {
@@ -178,13 +177,13 @@ public class PlayerPickDrop : MonoBehaviour
         Branches.Clear();
     }
 
-    public void Dropping(GameObject _branch)
+    public void Dropping(GameObject _branch) // Enables Physics to perform fall action and makes the parent null
     {
         EnPhysics(_branch.GetComponent<Rigidbody>());
         _branch.transform.parent = null;
     }
     
-    void RemPhysics( Rigidbody Rigid)
+    void RemPhysics( Rigidbody Rigid) //removes physics
     {
         Rigid.useGravity = false;
         Rigid.velocity = Vector3.zero;
@@ -193,7 +192,7 @@ public class PlayerPickDrop : MonoBehaviour
         Rigid.gameObject.GetComponent<BoxCollider>().enabled = false;
     }
 
-    void EnPhysics (Rigidbody Rigid)
+    void EnPhysics (Rigidbody Rigid) // enavbles physics
     {
         Rigid.useGravity = true;
         Rigid.isKinematic = false;
@@ -201,7 +200,7 @@ public class PlayerPickDrop : MonoBehaviour
         Rigid.gameObject.GetComponent<BoxCollider>().enabled = true;
     }
 
-    void DestroyFood(Collider other)
+    void DestroyFood(Collider other) // destrot object when eaten
     {
         Destroy(other.gameObject,3);
        

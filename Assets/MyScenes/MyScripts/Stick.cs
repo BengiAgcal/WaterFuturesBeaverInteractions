@@ -20,29 +20,5 @@ public class Stick : MonoBehaviour, YTInteractable
         return true;
     }
 
-    private void OnCollisionEnter(Collider other)
-    {
-        if (other.tag == "Animal")
-        {
-            Debug.Log("snlksa");
-            if (!PromptUI.IsDisplayed)
-            {
-                PromptUI.SetUp(InteractionPrompt);
-                Debug.Log("snlksaGG");
-            }
-
-            
-        }
-    }
-
-    private void OnCollisionExit(Collider other)
-    {
-        if (other.tag == "Animal")
-        {
-            _promptUI.gameObject.SetActive(false);
-
-        }
-    }
-
 
 }

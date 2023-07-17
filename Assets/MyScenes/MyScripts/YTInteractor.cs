@@ -12,11 +12,11 @@ public class YTInteractor : MonoBehaviour
     private readonly Collider[] _colliders = new Collider[3];
     [SerializeField] private int _numFound;
 
-    private YTInteractionPromptUI _interactionPromptUI;
+    //private YTInteractionPromptUI _interactionPromptUI;
 
     private YTInteractable _interactable;
     
-
+    //interactions for the branches and stuff
     private void Update()
     {
         _numFound = Physics.OverlapSphereNonAlloc(_interactionPoint.position, _interactionPointRadius, _colliders, _interactableMask);
