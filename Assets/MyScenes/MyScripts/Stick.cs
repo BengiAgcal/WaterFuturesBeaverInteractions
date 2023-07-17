@@ -7,6 +7,8 @@ public class Stick : MonoBehaviour, YTInteractable
     [SerializeField] private string _prompt;
 
     [SerializeField] private YTInteractionPromptUI _promptUI;
+    
+    
     public string InteractionPrompt => _prompt;
 
     public YTInteractionPromptUI PromptUI => _promptUI;
@@ -17,4 +19,30 @@ public class Stick : MonoBehaviour, YTInteractable
         Debug.Log("Picking");
         return true;
     }
+
+    private void OnCollisionEnter(Collider other)
+    {
+        if (other.tag == "Animal")
+        {
+            Debug.Log("snlksa");
+            if (!PromptUI.IsDisplayed)
+            {
+                PromptUI.SetUp(InteractionPrompt);
+                Debug.Log("snlksaGG");
+            }
+
+            
+        }
+    }
+
+    private void OnCollisionExit(Collider other)
+    {
+        if (other.tag == "Animal")
+        {
+            _promptUI.gameObject.SetActive(false);
+
+        }
+    }
+
+
 }

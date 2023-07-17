@@ -13,7 +13,7 @@ public class YTInteractionPromptUI : MonoBehaviour
     void Start()
     {
         _mainCamera = Camera.main;
-        _UIPanel.SetActive(false);
+       _UIPanel.SetActive(false);
     }
 
     // Update is called once per frame
@@ -29,6 +29,16 @@ public class YTInteractionPromptUI : MonoBehaviour
         _promptText.text = promptText;
         IsDisplayed = true;
         _UIPanel.SetActive(true);
+    }
+
+    public void Show()
+    {
+        _UIPanel.SetActive(true);
+    }
+
+    public void Hide()
+    {
+        _UIPanel.SetActive(false);
     }
 
     public void Close()

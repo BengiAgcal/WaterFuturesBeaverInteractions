@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 4610.3228, g: 2946.1584, b: 2169.2268, a: 1}
+  m_IndirectSpecularColor: {r: 4611.5747, g: 2946.8108, b: 2169.6448, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -54570,6 +54570,7 @@ MonoBehaviour:
   _targetText: {fileID: 810578995}
   _inText: {fileID: 1951657904}
   _UIdir: {fileID: 150582672}
+  CollectedBranches: []
   _targetAmt: 10
   _inAmt: 0
 --- !u!54 &2021294299

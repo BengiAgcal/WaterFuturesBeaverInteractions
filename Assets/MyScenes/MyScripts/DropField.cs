@@ -20,12 +20,6 @@ public class DropField : MonoBehaviour
         _inText.text = _inAmt.ToString();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void addItem(int Added)
     {
         _inAmt += Added;

@@ -27,6 +27,7 @@ public class PlayerPickDrop : MonoBehaviour
     GameObject _dropArea= null;
 
 
+
     public List<GameObject> Branches = new List<GameObject>();
     // Start is called before the first frame update
     void Start()
@@ -65,9 +66,17 @@ public class PlayerPickDrop : MonoBehaviour
         {
             _inDropArea = true;
             _dropArea = other.gameObject;
-            //Debug.Log(_dropArea);
             _dropArea.GetComponent<DropField>()._UIdir.SetEn();
-    
+        }
+
+        if (other.tag == "Branch" || other.tag == "Food")
+        {
+            YTInteractable _interactableUI = other.gameObject.GetComponent<YTInteractable>();
+            if( _interactableUI != null && !_inDropArea)
+            {
+                _interactableUI.PromptUI.Show();
+            }
+
         }
     }
 
@@ -79,8 +88,18 @@ public class PlayerPickDrop : MonoBehaviour
             _dropArea.GetComponent<DropField>()._UIdir.Close();
             _dropArea = null;
             
-            //Debug.Log(_dropArea);
         }
+
+        if (other.tag == "Branch" || other.tag == "Food")
+        {
+            YTInteractable _interactableUI = other.gameObject.GetComponent<YTInteractable>();
+            if (_interactableUI != null)
+            {
+                _interactableUI.PromptUI.Hide();    
+            }
+
+        }
+
     }
 
 

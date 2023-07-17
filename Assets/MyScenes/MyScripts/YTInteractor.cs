@@ -15,8 +15,7 @@ public class YTInteractor : MonoBehaviour
     private YTInteractionPromptUI _interactionPromptUI;
 
     private YTInteractable _interactable;
-
-
+    
 
     private void Update()
     {
@@ -30,24 +29,27 @@ public class YTInteractor : MonoBehaviour
 
             if (_interactable != null)
             {
+                /*
                 _interactionPromptUI = _interactable.PromptUI;
                 // _interactable.Interact(this);
                 if (!_interactionPromptUI.IsDisplayed)
                 {
                     _interactionPromptUI.SetUp(_interactable.InteractionPrompt);
                 }
+                */
 
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                    
                     _interactable.Interact(this);
+                    _interactable.PromptUI.Hide();
                     
                 }
             }
         }
         else
         {
-            if (_interactionPromptUI!=null && _interactionPromptUI.IsDisplayed) { _interactionPromptUI.Close(); _interactionPromptUI = null; }
+           // if (_interactionPromptUI!=null && _interactionPromptUI.IsDisplayed) { _interactionPromptUI.Close(); _interactionPromptUI = null; }
             if (_interactable != null) { _interactable = null; }
             
 
