@@ -17,9 +17,6 @@ public class PlayerPickDrop : MonoBehaviour
     UnityEvent m_MyEvent2 = new UnityEvent(); //Run the pick animation
     
 
-    [SerializeField]
-    IntVar _branchCount;
-
     GameObject _errorDisplay;
 
     bool _inDropArea = false;
@@ -27,8 +24,9 @@ public class PlayerPickDrop : MonoBehaviour
     GameObject _dropArea= null;
 
 
-
     public List<GameObject> Branches = new List<GameObject>();
+
+
     // This Script is kinda the game manager, managews the beaver picking, dropping and eating as well as the UI for interactions and Error Display
     void Start()
     {
@@ -107,23 +105,22 @@ public class PlayerPickDrop : MonoBehaviour
     public void TryToPick(Collider other) //Eats if Food, Picks if Item
     {
 
-        if (other.gameObject.tag == "Branch")
+        if (other.gameObject.tag == "Branch" && !_inDropArea)
         {
-            //If the GameObject has the same tag as specified, output this message in the console
-            //other.gameObject.SetActive(false);
-            ;
+            
             if (!Branches.Contains(other.gameObject) && Branches.Count <= 9)
             {
 
                 Branches.Add(other.gameObject);
                 m_MyEvent2.Invoke(); // make the move
                 StartCoroutine(DelayedFunction(other, 0.5f)); // tbd
-                _branchCount.Value++;
+                
             }
 
             Debug.Log(other.gameObject.name);
             Debug.Log(Branches.Count);
         }
+
         if(other.gameObject.tag== "Food")
         {
             if (Branches.Count == 0) // not holding any object can eat
@@ -173,7 +170,7 @@ public class PlayerPickDrop : MonoBehaviour
         {
             Dropping(Branches[i]);
         }
-        _branchCount.Value = 0;
+        
         Branches.Clear();
     }
 

@@ -5,20 +5,16 @@ using UnityEngine.UI;
 
 public class Fadeable : MonoBehaviour
 {
+    // USED TO TOGGLE UI ELEMENTS ON SCREEN
     private CanvasGroup _canvasGroup;
     private bool _visible= false;
-    // Start is called before the first frame update
+  
+
     void Start()
     {
         _canvasGroup = this.GetComponent<CanvasGroup>();
         _visible = (_canvasGroup.alpha != 0);
-       // StartCoroutine(FadeToggle(1,2));
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+       
     }
     
     public void Toggle(float Tr, float Keep)
@@ -72,7 +68,7 @@ public class Fadeable : MonoBehaviour
                 _canvasGroup.alpha = Mathf.Lerp(0, 1, t); //FadeIn
                yield return null;
             }
-
+           
         }
         else
         {
@@ -93,7 +89,7 @@ public class Fadeable : MonoBehaviour
                 _canvasGroup.alpha = Mathf.Lerp(1, 0, t); //FadeOut
                                                           yield return null;
             }
-
+            _canvasGroup.alpha = 0;
         }
         yield return null;
     }

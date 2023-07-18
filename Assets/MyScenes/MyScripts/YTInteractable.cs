@@ -8,7 +8,4 @@ public interface YTInteractable
     public YTInteractionPromptUI PromptUI { get; }
     public bool Interact(YTInteractor interactor);
 
-    public bool enabled { get; set; }
-  
-
 }
