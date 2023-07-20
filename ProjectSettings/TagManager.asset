@@ -13,6 +13,7 @@ TagManager:
   - Branch
   - Food
   - DropArea
+  - Plant
   layers:
   - Default
   - TransparentFX

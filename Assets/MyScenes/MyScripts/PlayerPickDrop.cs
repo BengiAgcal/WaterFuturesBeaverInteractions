@@ -67,7 +67,7 @@ public class PlayerPickDrop : MonoBehaviour
             _dropArea.GetComponent<DropField>()._UIdir.SetEn();
         }
 
-        if (other.tag == "Branch" || other.tag == "Food")
+        if (other.tag == "Branch" || other.tag == "Food" || other.tag == "Plant")
         {
             YTInteractable _interactableUI = other.gameObject.GetComponent<YTInteractable>();
             if( _interactableUI != null && !_inDropArea)
@@ -88,7 +88,7 @@ public class PlayerPickDrop : MonoBehaviour
             
         }
 
-        if (other.tag == "Branch" || other.tag == "Food")
+        if (other.tag == "Branch" || other.tag == "Food" || other.tag == "Plant")
         {
             YTInteractable _interactableUI = other.gameObject.GetComponent<YTInteractable>();
             if (_interactableUI != null)
